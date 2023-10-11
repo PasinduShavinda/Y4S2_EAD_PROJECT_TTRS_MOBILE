@@ -9,35 +9,36 @@ import org.jetbrains.annotations.NotNull;
 public class UserEntity {
     @PrimaryKey()
     @NotNull
-    public String nic;
+    public String Nic;
 
     public String id;
 
-    public String firstName;
+    public String Email;
 
-    public String lastName;
+    public String UserName;
 
-    public String dateOfBirth;
+    public String FullName;
 
-    public int phoneNo;
+    public String Password;
 
-    public String email;
+    public String ConfirmPassword;
 
-    public String password;
+    public String Role;
 
-    public boolean isActive;
+    public Boolean IsActive;
 
 
     public static UserEntity fromDto(UserDto dto){
         UserEntity entity = new UserEntity();
         entity.id = dto.id;
-        entity.nic = dto.nic;
-        entity.firstName = dto.firstName;
-        entity.lastName = dto.lastName;
-        entity.dateOfBirth = dto.dateOfBirth;
-        entity.email = dto.email;
-        entity.password = dto.password;
-        entity.phoneNo = dto.phoneNo;
+        entity.Nic = dto.Nic;
+        entity.UserName = dto.Username;
+        entity.FullName = dto.FullName;
+        entity.Email = dto.Email;
+        entity.Password = dto.Password;
+        entity.ConfirmPassword = dto.ConfirmPassword;
+        entity.Role = dto.Role;
+        entity.IsActive = dto.IsActive;
         return entity;
     }
 

@@ -2,12 +2,12 @@ package com.example.traveleasemobileapp.models;
 
 public class SignUpResponse {
     public String id;
-    public String nic;
-    public String firstName;
-    public String lastName;
-    public String dateOfBirth;
-    public int phoneNo;
-    public String email;
-    public String password;
-    public boolean isActive;
+    public String Nic;
+    public String Email;
+    public String Username;
+    public String FullName;
+    public String Password;
+    public String ConfirmPassword;
+    public String Role;
+    public Boolean IsActive;
 }

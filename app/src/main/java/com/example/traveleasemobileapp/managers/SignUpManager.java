@@ -31,22 +31,23 @@ public class SignUpManager {
 
     //Calls backend API to create a new account
     public void signUp(
-            String nic,
-            String firstName,
-            String lastName,
-            String dateOfBirth,
-            int phoneNo,
-            String email,
-            String password,
+            String Nic,
+            String Email,
+            String Username,
+            String FullName,
+            String Password,
+            String ConfirmPassword,
+            String Role,
+            Boolean IsActive,
             Runnable onSuccess,
             Consumer<String> onError
     ) {
         if (!NetworkManager.getInstance().isNetworkAvailable()) {
-            onError.accept("No internet connectivity");
+            onError.accept("No Internet Connectivity");
             return;
         }
 
-        SignUpRequest body = new SignUpRequest(nic, firstName, lastName, dateOfBirth, phoneNo, email, password);
+        SignUpRequest body = new SignUpRequest(Nic, Email, Username, FullName, Password, ConfirmPassword, Role, IsActive);
 
         signUpService.signUp(body)
                 .enqueue(new Callback<SignUpResponse>() {
@@ -54,7 +55,6 @@ public class SignUpManager {
                     public void onResponse(Call<SignUpResponse> call, Response<SignUpResponse> response) {
                         Log.i("SIGNUPRES:", String.valueOf(response.code()));
                         Log.i("URL:", call.request().url().toString());
-
 
                         if (response.code() == 201) {
                             onSuccess.run();

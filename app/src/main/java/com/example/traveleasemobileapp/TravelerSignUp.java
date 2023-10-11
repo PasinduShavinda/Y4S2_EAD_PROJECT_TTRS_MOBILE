@@ -14,13 +14,13 @@ import com.example.traveleasemobileapp.managers.SignUpManager;
 
 public class TravelerSignUp extends AppCompatActivity {
     EditText nicEditText;
-    EditText firstNameEditText;
-    EditText lastNameEditText;
-    EditText dateOfBirthEditText;
-    EditText phoneEditText;
+
     EditText emailEditText;
+    EditText userNameEditText;
+    EditText fullNameEditText;
     EditText passwordEditText;
-    EditText confPasswordEditText;
+    EditText confirmPasswordEditText;
+
     Button singUpBtn;
 
     ProgressDialog progressDialog;
@@ -37,13 +37,11 @@ public class TravelerSignUp extends AppCompatActivity {
 
         this.signUpManager = SignUpManager.getInstance();
         this.nicEditText = findViewById(R.id.nicEditText);
-        this.firstNameEditText = findViewById(R.id.firstNameEditText);
-        this.lastNameEditText = findViewById(R.id.lastNameEditText);
-        this.dateOfBirthEditText = findViewById(R.id.dateOfBirthEditText);
-        this.phoneEditText = findViewById(R.id.phoneEditText);
         this.emailEditText = findViewById(R.id.emailEditText);
+        this.userNameEditText = findViewById(R.id.userNameEditText);
+        this.fullNameEditText = findViewById(R.id.fullNameEditText);
         this.passwordEditText = findViewById(R.id.passwordEditText);
-        this.confPasswordEditText = findViewById(R.id.confPasswordEditText);
+        this.confirmPasswordEditText = findViewById(R.id.confirmPasswordEditText);
         this.singUpBtn = findViewById(R.id.signUpBtn);
         this.singUpBtn.setOnClickListener(view -> signUp());
     }
@@ -51,24 +49,23 @@ public class TravelerSignUp extends AppCompatActivity {
     //Validate details and sign up
     private void signUp() {
         String nic = this.nicEditText.getText().toString();
-        String firstName = this.firstNameEditText.getText().toString();
-        String lastName = this.lastNameEditText.getText().toString();
-        String dateOfBirth = this.dateOfBirthEditText.getText().toString();
-        String phoneNo = this.phoneEditText.getText().toString();
         String email = this.emailEditText.getText().toString();
+        String userName = this.userNameEditText.getText().toString();
+        String fullName = this.fullNameEditText.getText().toString();
         String password = this.passwordEditText.getText().toString();
-        String confPassword = this.confPasswordEditText.getText().toString();
+        String confirmPassword = this.confirmPasswordEditText.getText().toString();
+        String role = "Traveller";
+        Boolean isActive = true;
 
-        if (!nic.isEmpty() && !firstName.isEmpty() && !lastName.isEmpty() && !String.valueOf(phoneNo).isEmpty() && !dateOfBirth.isEmpty() && !email.isEmpty()
-                && !password.isEmpty() && !confPassword.isEmpty()) {
+        if (!nic.isEmpty() && !email.isEmpty() && !userName.isEmpty() && !fullName.isEmpty() && !confirmPassword.isEmpty()) {
             progressDialog = new ProgressDialog(this);
             progressDialog.setMessage("Loading...");
             progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
             progressDialog.setCancelable(false);
             progressDialog.show();
 
-            if (confPassword.equals(password)) {
-                signUpManager.signUp(nic, firstName, lastName, dateOfBirth, Integer.parseInt(phoneNo), email, password, () -> handleSignUpSuccessful(),
+            if (confirmPassword.equals(password)) {
+                signUpManager.signUp(nic, email, userName, fullName, password, confirmPassword, role, isActive, () -> handleSignUpSuccessful(),
                         error -> handleSignUpFailed(error)
                 );
             } else {

@@ -5,7 +5,7 @@ import retrofit2.http.Body;
 import retrofit2.http.POST;
 
 public interface SignUpService {
-    @POST("travelers")
+    @POST("authenticate/register")
     Call<SignUpResponse> signUp(@Body SignUpRequest signUpRequest);
 
 }
