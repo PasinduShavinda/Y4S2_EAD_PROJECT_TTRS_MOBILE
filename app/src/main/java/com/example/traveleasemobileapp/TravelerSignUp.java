@@ -33,7 +33,7 @@ public class TravelerSignUp extends AppCompatActivity {
         setContentView(R.layout.activity_traveler_sign_up);
         ContextManager.getInstance().setApplicationContext(getApplicationContext());
 
-        getSupportActionBar().hide();
+
 
         this.signUpManager = SignUpManager.getInstance();
         this.nicEditText = findViewById(R.id.nicEditText);
@@ -88,5 +88,7 @@ public class TravelerSignUp extends AppCompatActivity {
     private void handleSignUpFailed(String error){
         progressDialog.dismiss();
         Toast.makeText(this, error, Toast.LENGTH_LONG).show();
+        System.out.println(error);
+
     }
 }
