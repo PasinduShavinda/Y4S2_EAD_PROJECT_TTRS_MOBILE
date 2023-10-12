@@ -5,6 +5,7 @@ import android.util.Log;
 import com.example.traveleasemobileapp.models.ReservationResponse;
 import com.example.traveleasemobileapp.models.ReservationService;
 import com.example.traveleasemobileapp.models.ReservationRequest;
+import com.example.traveleasemobileapp.models.ReserationUpdateRequest;
 
 import java.util.function.Consumer;
 import java.util.List;
@@ -138,6 +139,49 @@ public class ReservationManager {
                     }
                 });
     }
+
+    public void updateReservation(
+
+            String reservationId,
+            Integer seatcount1,
+            Integer seatcount2,
+            String trainName,
+            String trainId,
+            String userId,
+            String sheduleId,
+            String date,
+            Runnable onSuccess,
+            Consumer<String> onError
+    ) {
+        if (!NetworkManager.getInstance().isNetworkAvailable()) {
+            onError.accept("No Internet Connectivity");
+            return;
+        }
+
+        ReserationUpdateRequest body = new ReserationUpdateRequest(reservationId, seatcount1, seatcount2, trainName, trainId, userId, sheduleId, date);
+
+        reservationService.editReservation(reservationId, body)
+                .enqueue(new Callback<ReservationResponse>() {
+                    @Override
+                    public void onResponse(Call<ReservationResponse> call, Response<ReservationResponse> response) {
+                        Log.i("UPDATERES:", String.valueOf(response.code()));
+                        Log.i("URL:", call.request().url().toString());
+
+                        if (response.isSuccessful()) {
+                            onSuccess.run();
+                        } else {
+                            onError.accept("An error occurred while updating the reservation");
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<ReservationResponse> call, Throwable t) {
+                        Log.e("UPDATERESERR:", t.toString());
+                        onError.accept("Unknown error occurred when updating the reservation");
+                    }
+                });
+    }
+
 
 
 

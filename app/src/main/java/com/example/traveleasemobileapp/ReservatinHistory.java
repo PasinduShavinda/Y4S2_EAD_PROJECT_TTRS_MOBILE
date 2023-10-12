@@ -1,15 +1,19 @@
 package com.example.traveleasemobileapp;
 
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -86,10 +90,74 @@ public class ReservatinHistory extends AppCompatActivity {
         }
 
         private void onEditButtonClicked(int position) {
-            // Implement the edit button click action here
-            // You can pass the selected reservation data or position to an edit activity/fragment.
-            System.out.println("edited");
+            ReservationResponse reservation = reservations.get(position);
+
+            // Use the context from the parent view
+            Context context = recyclerView.getContext();
+
+            AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(context);
+            View popupView = LayoutInflater.from(context).inflate(R.layout.edit_reservation_screen, null);
+            dialogBuilder.setView(popupView);
+
+            TextView popupDateReserved = popupView.findViewById(R.id.popupDateReserved);
+            EditText edit1class= popupView.findViewById(R.id.update1class);
+            EditText edit2class= popupView.findViewById(R.id.update2class);
+
+
+          popupDateReserved.setText("Date : " + reservation.date);
+            edit1class.setHint(String.valueOf(reservation.seatcount1)); // Convert to string
+            edit2class.setHint(String.valueOf(reservation.seatcount2));
+
+            dialogBuilder.setPositiveButton("OK", (dialog, which) -> {
+
+                ReservationManager reservationManager = ReservationManager.getInstance();
+
+
+                String reservationId = reservation.id;
+                Integer updatedSeatcount1 = Integer.parseInt(edit1class.getText().toString());
+                Integer updatedSeatcount2 = Integer.parseInt(edit2class.getText().toString());
+
+                String updatedTrainName = reservation.trainName;
+                String updatedTrainId = reservation.trainId;
+                String updatedUserId = reservation.userId;
+                String updatedScheduleId = reservation.sheduleId;
+                String updatedDate = reservation.date;
+
+// Call the updateReservation method
+                reservationManager.updateReservation(
+                        reservationId,
+                        updatedSeatcount1,
+                        updatedSeatcount2,
+                        updatedTrainName,
+                        updatedTrainId,
+                        updatedUserId,
+                        updatedScheduleId,
+                        updatedDate,
+                        () -> {
+                            // Handle success (e.g., show a success message)
+                            System.out.println("Reservation updated successfully");
+                        },
+                        error -> {
+
+                            System.err.println("Error updating reservation: " + error);
+                        }
+                );
+
+                dialog.dismiss();
+                myreservations();
+            });
+
+            dialogBuilder.setNegativeButton("Cancel", (dialog, which) -> {
+                // Handle any actions on the Cancel button if needed
+                dialog.dismiss();
+            });
+
+
+            AlertDialog alertDialog = dialogBuilder.create();
+            alertDialog.show();
         }
+
+
 
         private void onDeleteButtonClicked(int position,String id) {
             String reservationId = id;
