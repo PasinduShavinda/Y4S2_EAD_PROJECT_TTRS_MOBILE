@@ -1,3 +1,13 @@
+/**
+ * FileName: TravelerSignUp.java
+ * FileType: Java Class
+ * Author: IT20140298 Shavinda W.A.P
+ * Description: This class represents the Traveler Sign-Up activity in the TravelEase mobile app.
+ * It allows travelers to create an account by providing their details, including NIC (National Identification Card) number,
+ * email, username, full name, and password. The class communicates with the server through the SignUpManager
+ * to register the new user.
+ */
+
 package com.example.traveleasemobileapp;
 
 import android.app.ProgressDialog;
@@ -14,17 +24,13 @@ import com.example.traveleasemobileapp.managers.SignUpManager;
 
 public class TravelerSignUp extends AppCompatActivity {
     EditText nicEditText;
-
     EditText emailEditText;
     EditText userNameEditText;
     EditText fullNameEditText;
     EditText passwordEditText;
     EditText confirmPasswordEditText;
-
     Button singUpBtn;
-
     ProgressDialog progressDialog;
-
     SignUpManager signUpManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +52,11 @@ public class TravelerSignUp extends AppCompatActivity {
         this.singUpBtn.setOnClickListener(view -> signUp());
     }
 
-    //Validate details and sign up
+    /**
+     * This function is called when the "Sign Up" button is clicked.
+     * It collects user input for registration, validates it, and initiates the registration process.
+     */
+
     private void signUp() {
         String nic = this.nicEditText.getText().toString();
         String email = this.emailEditText.getText().toString();
@@ -75,16 +85,21 @@ public class TravelerSignUp extends AppCompatActivity {
             Toast.makeText(this, "Please fill all the fields!", Toast.LENGTH_LONG).show();
         }
     }
-
-    //Called if sign up was successful
+    /**
+     * This function is called when the sign-up process is successful.
+     * It dismisses the progress dialog and shows a success message to the user.
+     */
     private void handleSignUpSuccessful(){
         progressDialog.dismiss();
         Toast.makeText(this, "Successful!", Toast.LENGTH_LONG).show();
-//        Intent intent = new Intent(this, LogIn.class);
-//        startActivity(intent);
+        Intent intent = new Intent(this, LogIn.class);
+        startActivity(intent);
     }
-
-    //Called if sign up failed
+    /**
+     * This function is called when the sign-up process fails.
+     * It dismisses the progress dialog and displays an error message to the user.
+     * @param error The error message to display.
+     */
     private void handleSignUpFailed(String error){
         progressDialog.dismiss();
         Toast.makeText(this, error, Toast.LENGTH_LONG).show();
