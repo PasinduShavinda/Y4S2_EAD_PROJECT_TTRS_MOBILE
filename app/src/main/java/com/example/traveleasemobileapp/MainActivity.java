@@ -15,9 +15,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
+import android.util.Log;
 import com.example.traveleasemobileapp.managers.ContextManager;
+import com.example.traveleasemobileapp.managers.ReservationManager;
+import com.example.traveleasemobileapp.models.ReservationResponse;
 public class MainActivity extends AppCompatActivity {
+
+    private Button btnUserReg;
+    private Button btnReservationSerch;
+    private Button myreservation;
     private Button btnUserReg, btnLogin, btnSendReq;;
 
     @Override
@@ -29,6 +35,9 @@ public class MainActivity extends AppCompatActivity {
 
         btnUserReg = (Button) findViewById(R.id.btn_userProfile);
 
+        btnReservationSerch=(Button) findViewById(R.id.btn_reservation_Search);
+        myreservation =(Button)findViewById(R.id.btn_my_reservations);
+
         btnLogin = (Button) findViewById(R.id.btn_logins);
 
         btnSendReq = (Button) findViewById(R.id.btn_send_req);
@@ -39,6 +48,24 @@ public class MainActivity extends AppCompatActivity {
                 openRegistrationPage();
             }
         });
+
+
+        btnReservationSerch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openReservationPage();
+            }
+        });
+        myreservation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                //myreservations();
+                openReservationHistoryPage();
+            }
+        });
+
+    }
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,6 +92,21 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
+    public void openReservationPage(){
+
+        Intent intent = new Intent(this, ReservationSearch.class);
+
+        startActivity(intent);
+
+    }
+    public void openReservationHistoryPage(){
+
+        Intent intent = new Intent(this, ReservatinHistory.class);
+
+        startActivity(intent);
+
+    }
+
 
     public void openLoginPage(){
 
