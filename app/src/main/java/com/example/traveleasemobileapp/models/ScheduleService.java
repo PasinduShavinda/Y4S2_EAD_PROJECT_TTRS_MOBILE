@@ -1,3 +1,5 @@
+// Kalansooriya S. H.
+// TI20137700
 package com.example.traveleasemobileapp.models;
 import java.util.List;
 import retrofit2.Call;

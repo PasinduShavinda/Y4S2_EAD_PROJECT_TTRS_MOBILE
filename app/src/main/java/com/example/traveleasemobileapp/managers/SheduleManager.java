@@ -1,3 +1,5 @@
+// Kalansooriya S. H.
+// TI20137700
 package com.example.traveleasemobileapp.managers;
 
 import android.util.Log;
@@ -17,7 +19,7 @@ public class SheduleManager {
     private List<ScheduleResponse> filteredSchedules;
     private ScheduleService scheduleService;
 
-    //return SignUpManager singleton object
+
     public static SheduleManager getInstance() {
         if (singleton == null)
             singleton = new SheduleManager();

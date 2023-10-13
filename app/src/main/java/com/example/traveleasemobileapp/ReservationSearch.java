@@ -1,3 +1,5 @@
+// Kalansooriya S. H.
+// TI20137700
 package com.example.traveleasemobileapp;
 
 import static androidx.core.content.ContentProviderCompat.requireContext;
@@ -85,7 +87,7 @@ public class ReservationSearch extends AppCompatActivity {
         fromSpinner.setAdapter(adapter);
         toSpinner.setAdapter(adapter);
 
-        // Initialize the scheduleAdapter and set it to the ListView
+
 
 
         // Set OnClickListener for the date picker button

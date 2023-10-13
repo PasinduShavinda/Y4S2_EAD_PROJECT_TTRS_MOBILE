@@ -1,3 +1,5 @@
+// Kalansooriya S. H.
+// TI20137700
 package com.example.traveleasemobileapp;
 
 
@@ -129,7 +131,7 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.Schedu
 
             } catch (NumberFormatException e) {
                 // Handle the case where the input strings are not valid integers
-                // You can show an error message or perform some error handling here
+              
             }
 
 

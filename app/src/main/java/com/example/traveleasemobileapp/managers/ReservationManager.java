@@ -1,3 +1,5 @@
+// Kalansooriya S. H.
+// TI20137700
 package com.example.traveleasemobileapp.managers;
 
 import android.util.Log;
@@ -20,7 +22,7 @@ public class ReservationManager {
     private static ReservationManager singleton;
     private ReservationService reservationService;
 
-    //return SignUpManager singleton object
+
     public static ReservationManager getInstance() {
         if (singleton == null)
             singleton = new ReservationManager();
@@ -32,7 +34,7 @@ public class ReservationManager {
         reservationService = NetworkManager.getInstance().createService(ReservationService.class);
     }
 
-    //Calls backend API to create a new account
+
     public void createreservation(
             Integer seatcount1,
     Integer seatcount2,
