@@ -1,76 +1,83 @@
+/**
+ * FileName: MainActivity.java
+ * FileType: Java Class
+ * Author: IT20140298 Shavinda W.A.P
+ * Description: This class represents the main activity of the TravelEase mobile app.
+ * It serves as the entry point for the application and provides options to navigate to user registration,
+ * login, and request activation screens.
+ */
+
 package com.example.traveleasemobileapp;
-
-import android.os.Bundle;
-
-import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
-
-import com.example.traveleasemobileapp.databinding.ActivityMainBinding;
-
-import android.view.Menu;
-import android.view.MenuItem;
-
+import com.example.traveleasemobileapp.managers.ContextManager;
 public class MainActivity extends AppCompatActivity {
-
-    private AppBarConfiguration appBarConfiguration;
-    private ActivityMainBinding binding;
+    private Button btnUserReg, btnLogin, btnSendReq;;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        ContextManager.getInstance().setApplicationContext(getApplicationContext());
 
-        setSupportActionBar(binding.toolbar);
+        btnUserReg = (Button) findViewById(R.id.btn_userProfile);
 
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
-        appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+        btnLogin = (Button) findViewById(R.id.btn_logins);
 
-        binding.fab.setOnClickListener(new View.OnClickListener() {
+        btnSendReq = (Button) findViewById(R.id.btn_send_req);
+
+        btnUserReg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                openRegistrationPage();
+            }
+        });
+
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openLoginPage();
+            }
+        });
+
+        btnSendReq.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openSendReqPage();
             }
         });
     }
+    /**
+     * Opens the user registration page.
+     */
+    // Navigation
+    public void openRegistrationPage(){
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
+        Intent intent = new Intent(this, TravelerSignUp.class);
+
+        startActivity(intent);
+
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+    public void openLoginPage(){
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+        Intent intent = new Intent(this, LogIn.class);
 
-        return super.onOptionsItemSelected(item);
+        startActivity(intent);
     }
 
-    @Override
-    public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
-        return NavigationUI.navigateUp(navController, appBarConfiguration)
-                || super.onSupportNavigateUp();
+    public void openSendReqPage(){
+
+        Intent intent = new Intent(this, RequestActivate.class);
+
+        startActivity(intent);
     }
+
 }

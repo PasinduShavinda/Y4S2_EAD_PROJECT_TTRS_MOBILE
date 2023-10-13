@@ -1,12 +1,36 @@
 <resources>
     <string name="app_name">TravelEaseMobileApp</string>
     <string name="action_settings">Settings</string>
+
+    <!--    Strings used in Registration Form-->
+    <string name="nic">National Identity Card Number (NIC)</string>
+    <string name="email">E-Mail Address</string>
+    <string name="user_name">User Name</string>
+    <string name="full_name">Full Name</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+
+    <string name="date_of_birth">Date Of Birth</string>
+    <string name="phone_no">Phone Number</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="login">Log In</string>
+    <string name="sign_up_hint">Don\'t have an account?</string>
+    <string name="update_profile">Update Profile</string>
+    <string name="logout">Log Out</string>
+    <string name="my_profile">My Profile</string>
+    <string name="update_profile_link">Change Profile Details</string>
+    <string name="deactivate_profile_link">Deactivate Profile</string>
+    <string name="confirm">Confirm</string>
+    <string name="confirm_pwd_title">Enter your password to confirm</string>
+    <string name="title_activity_reservation">Reservation</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string name="btn_userProfile">REGISTRATION</string>
+
+
 </resources>
