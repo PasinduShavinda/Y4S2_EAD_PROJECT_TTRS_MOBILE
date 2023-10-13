@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <!-- Header -->
+    <TextView
+        android:id="@+id/headerLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Update Profile"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <!-- NIC -->
+    <TextView
+        android:id="@+id/nicLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/nicLabel"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:text="NIC:"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/nicValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/nicLabel"
+        android:layout_marginTop="20dp"
+        android:text="123456789"
+        android:textSize="18sp" />
+
+    <!-- Username -->
+    <TextView
+        android:id="@+id/usernameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nicLabel"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:text="Username:"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/usernameValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/usernameLabel"
+        android:layout_below="@id/nicLabel"
+        android:layout_marginTop="10dp"
+        android:text="john_doe"
+        android:textSize="18sp" />
+
+    <!-- NIC-->
+    <TextView
+        android:id="@+id/nicLabel1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/usernameLabel"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:text="NIC:"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/nicValue2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/emailLabel"
+        android:layout_below="@id/usernameLabel"
+        android:layout_marginTop="10dp"
+        android:text="200109898765"
+        android:textSize="18sp" />
+
+    <!-- Email -->
+    <TextView
+        android:id="@+id/emailLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nicLabel1"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:text="Email:"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/emailValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/emailLabel"
+        android:layout_below="@id/nicValue2"
+        android:layout_marginTop="10dp"
+        android:text="john.doe@example.com"
+        android:textSize="18sp" />
+
+    <!-- Full Name -->
+    <TextView
+        android:id="@+id/fullNameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/emailLabel"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:text="Full Name:"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/fullNameValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/fullNameLabel"
+        android:layout_below="@id/emailLabel"
+        android:layout_marginTop="10dp"
+        android:text="John Doe"
+        android:textSize="18sp" />
+
+    <!-- Update Button -->
+    <Button
+        android:id="@+id/updateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fullNameValue"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Update"
+        android:textSize="18sp" />
+
+
+</RelativeLayout>
