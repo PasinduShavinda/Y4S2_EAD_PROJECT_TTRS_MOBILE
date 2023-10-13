@@ -21,10 +21,12 @@ public class NetworkManager {
     private static NetworkManager singleton;
     // Retrofit instance for making network requests
     private Retrofit retrofit;
+
     // Base URL for network requests
     private final String baseUrl = "http://10.0.2.2:5239/api/v1/";
 
     // ConnectivityManager for checking network connectivity
+
     private ConnectivityManager connectivityManager;
 
     /**
