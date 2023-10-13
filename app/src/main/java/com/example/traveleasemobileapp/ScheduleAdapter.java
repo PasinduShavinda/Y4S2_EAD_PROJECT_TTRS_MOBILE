@@ -122,7 +122,7 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.Schedu
                 int number2 = Integer.parseInt(input2);
 
                 rereservationManager.createreservation(number1,number2,
-                        schedule.trainName,schedule.trainId,"",
+                        schedule.trainName,schedule.trainId,"test",
                         schedule._id, schedule.date , () -> dialog.dismiss(),
                         error -> dialog.dismiss()
                 );

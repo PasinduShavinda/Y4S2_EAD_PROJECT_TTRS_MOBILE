@@ -44,7 +44,7 @@ public class ReservatinHistory extends AppCompatActivity {
     }
 
     public void myreservations() {
-        String userId = "wbhebhebhfb";
+        String userId = "test";
         ReservationManager reservationManager = ReservationManager.getInstance();
 
         reservationManager.getReservationsByUserId(userId,
@@ -148,7 +148,7 @@ public class ReservatinHistory extends AppCompatActivity {
             });
 
             dialogBuilder.setNegativeButton("Cancel", (dialog, which) -> {
-                // Handle any actions on the Cancel button if needed
+
                 dialog.dismiss();
             });
 

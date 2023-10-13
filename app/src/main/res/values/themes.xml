@@ -18,7 +18,9 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
-
+    <style name="RedButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">#FF0000</item> <!-- Set text color to red -->
+    </style>
     <style name="Theme.TravelEaseMobileApp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.TravelEaseMobileApp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />

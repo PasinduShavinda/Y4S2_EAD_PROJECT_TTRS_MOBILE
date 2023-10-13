@@ -45,6 +45,12 @@ public class ReservationSearch extends AppCompatActivity {
 
             add("Colombo Fort");
             add("Maradana");
+            add("Matara");
+            add("Galle");
+            add("Badulla");
+            add("Mount Lavinia");
+            add("Jaffna");
+            add("Polgahawela");
 
         }
     };

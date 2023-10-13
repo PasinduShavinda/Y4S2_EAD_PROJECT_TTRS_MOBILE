@@ -25,6 +25,7 @@ app:cardUseCompatPadding="true">
             android:id="@+id/date_reserved"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/black"
             android:text="Date : "
             tools:text="Reservation ID: 123" />
 
@@ -33,6 +34,7 @@ app:cardUseCompatPadding="true">
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Train Name: "
+            android:textColor="@color/black"
             tools:text="Train Name: Example Train" />
 
         <TextView
@@ -40,12 +42,14 @@ app:cardUseCompatPadding="true">
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Train Name: "
+            android:textColor="@color/black"
             tools:text="Train Name: Example Train" />
         <TextView
             android:id="@+id/SecondClassSteats"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Train Name: "
+            android:textColor="@color/black"
             tools:text="Train Name: Example Train" />
 
     </LinearLayout>
