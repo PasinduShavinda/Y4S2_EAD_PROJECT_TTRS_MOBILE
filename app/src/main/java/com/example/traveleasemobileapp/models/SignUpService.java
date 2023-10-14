@@ -19,7 +19,7 @@ public interface SignUpService {
      * @param signUpRequest The request body containing user details for registration.
      * @return A Call object representing the registration request and expected response.
      */
-    @POST("authenticate/register")
+    @POST("v1/authenticate/register")
     Call<SignUpResponse> signUp(@Body SignUpRequest signUpRequest);
 
 }

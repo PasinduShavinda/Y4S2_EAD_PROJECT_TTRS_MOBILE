@@ -133,6 +133,8 @@
         android:layout_below="@id/fullNameValue"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
+        android:background="@drawable/purple_background"
+        android:textColor="@color/white"
         android:text="Update"
         android:textSize="18sp" />
 

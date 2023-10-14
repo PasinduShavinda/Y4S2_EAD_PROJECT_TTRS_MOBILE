@@ -1,53 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
 
     <Button
         android:id="@+id/btn_userProfile"
-        android:layout_width="200dp"
-        android:layout_height="54dp"
-        android:layout_centerInParent="true"
-        android:text="@string/btn_userProfile"
-        android:layout_marginTop="32dp" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User Profile"
+        android:background="@color/purple_500"
+        android:textColor="@color/white"
+        android:padding="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"/>
 
     <Button
         android:id="@+id/btn_reservation_Search"
-        android:layout_width="210dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="156dp"
-        android:text=" Create Reservation"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reservation Search"
+        android:background="@color/purple_500"
+        android:textColor="@color/white"
+        android:padding="10dp"
+        android:layout_below="@+id/btn_userProfile"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"/>
 
     <Button
         android:id="@+id/btn_my_reservations"
-        android:layout_width="196dp"
-        android:layout_height="61dp"
-        android:layout_marginStart="104dp"
-        android:layout_marginTop="56dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="My Reservations"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_reservation_Search" />
-
-
-        android:id="@+id/btn_logins"
-        android:layout_width="200dp"
-        android:layout_height="54dp"
-        android:layout_below="@+id/btn_userProfile"
+        android:background="@color/purple_500"
+        android:textColor="@color/white"
+        android:padding="10dp"
+        android:layout_below="@+id/btn_reservation_Search"
         android:layout_centerHorizontal="true"
-        android:text="@string/login"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:id="@+id/btn_logins"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Logins"
+        android:background="@color/purple_500"
+        android:textColor="@color/white"
+        android:padding="10dp"
+        android:layout_below="@+id/btn_my_reservations"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"/>
 
     <Button
         android:id="@+id/btn_send_req"
-        android:layout_width="200dp"
-        android:layout_height="54dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send Request"
+        android:background="@color/purple_500"
+        android:textColor="@color/white"
+        android:padding="10dp"
         android:layout_below="@+id/btn_logins"
         android:layout_centerHorizontal="true"
-        android:text="SEND REQUEST ACTIVE"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="20dp"/>
 
 </RelativeLayout>

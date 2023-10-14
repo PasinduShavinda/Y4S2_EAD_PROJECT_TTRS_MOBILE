@@ -19,6 +19,6 @@ public interface LogInService {
      * @param logInRequest The request body containing user credentials for login.
      * @return A Call object representing the login request and expected response.
      */
-    @POST("authenticate/login")
+    @POST("v1/authenticate/login")
     Call<LogInResponse> login(@Body LogInRequest logInRequest);
 }

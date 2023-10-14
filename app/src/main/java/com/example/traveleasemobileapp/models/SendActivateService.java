@@ -15,7 +15,7 @@ import retrofit2.http.Path;
 
 public interface SendActivateService {
     // Definition of a PUT request method
-    @PUT("traveller/account/sendreq/{nic}")
+    @PUT("v1/traveller/account/sendreq/{nic}")
         // Method signature for sending an activation request
         // It expects a NIC (National Identification Card) as a path parameter
         // and returns a Call object with a SendActivateResponse type

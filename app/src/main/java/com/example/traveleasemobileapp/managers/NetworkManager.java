@@ -23,7 +23,7 @@ public class NetworkManager {
     private Retrofit retrofit;
 
     // Base URL for network requests
-    private final String baseUrl = "http://10.0.2.2:5239/api/v1/";
+    private final String baseUrl = "http://10.0.2.2:5239/api/";
 
     // ConnectivityManager for checking network connectivity
 

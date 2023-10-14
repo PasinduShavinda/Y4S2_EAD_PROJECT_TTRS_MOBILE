@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btnUserReg;
     private Button btnReservationSerch;
     private Button myreservation;
-    private Button btnUserReg, btnLogin, btnSendReq;;
+    private Button  btnLogin, btnSendReq;;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,16 +64,12 @@ public class MainActivity extends AppCompatActivity {
                 openReservationHistoryPage();
             }
         });
-
-    }
-
-        btnLogin.setOnClickListener(new View.OnClickListener() {
+                btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 openLoginPage();
             }
         });
-
         btnSendReq.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -81,6 +77,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+//        btnLogin.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                openLoginPage();
+//            }
+//        });
+//
+//        btnSendReq.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                openSendReqPage();
+//            }
+//        });
+ //   }
     /**
      * Opens the user registration page.
      */

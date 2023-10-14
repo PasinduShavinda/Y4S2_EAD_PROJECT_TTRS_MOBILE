@@ -87,6 +87,8 @@
         android:text="@string/sign_up"
         android:layout_below="@id/confirmPasswordEditText"
         android:layout_marginTop="32dp"
+        android:background="@drawable/purple_background"
+        android:textColor="@color/white"
         android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

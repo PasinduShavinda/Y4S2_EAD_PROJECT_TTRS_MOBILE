@@ -19,6 +19,6 @@ public interface DeactivateService {
      * @param nic The NIC (National Identification Card) of the traveler to deactivate.
      * @return A Call object representing the deactivation request and expected response.
      */
-    @PUT("traveller/account/deactivate/{nic}")
+    @PUT("v1/traveller/account/deactivate/{nic}")
     Call<DeactivateResponse> deactivate(@Path("nic") String nic);
 }
