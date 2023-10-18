@@ -37,7 +37,7 @@ public class LogInManager {
     private final String loginStateFile = "loginstate";
     private final String isLoggedInKey = "logged_in";
     private final String userNicKey = "user_nic";
-
+    private final String userAccessToken = "access_token";
 
     /**
      * Get the instance of the LogInManager. If an instance does not exist, a new one is created.
@@ -121,14 +121,14 @@ public class LogInManager {
                                 userDto.Email = Email;
                                 userDto.IsActive = IsActive;
 
-                                setLoggedInState(true, Nic);
+                                setLoggedInState(true, Nic, AccessToken);
                                 saveUserDetails(userDto);
                                 onSuccess.run();
                             } else {
-                                onError.accept("Login Failed: " + logInResponse.message);
+                                onError.accept("Login Failed, Your Account was Deactivated!");
                             }
                         } else {
-                            onError.accept("Incorrect Credentials");
+                            onError.accept("Incorrect Username or Password");
                         }
                     }
 
@@ -146,11 +146,12 @@ public class LogInManager {
      * @param isLoggedIn True if the user is logged in; false otherwise.
      * @param Nic The NIC (National Identification Card) of the user.
      */
-    public void setLoggedInState(boolean isLoggedIn, String Nic){
+    public void setLoggedInState(boolean isLoggedIn, String Nic, String AccessToken){
         Context context = ContextManager.getInstance().getApplicationContext();
         SharedPreferences.Editor editor = context.getSharedPreferences(loginStateFile, Context.MODE_PRIVATE).edit();
         editor.putBoolean(isLoggedInKey, isLoggedIn);
         editor.putString(userNicKey, Nic);
+        editor.putString(userAccessToken, AccessToken);
         editor.apply();
     }
     /**

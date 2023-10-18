@@ -10,6 +10,7 @@
 package com.example.traveleasemobileapp.models;
 
 import retrofit2.Call;
+import retrofit2.http.Header;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
@@ -20,5 +21,5 @@ public interface DeactivateService {
      * @return A Call object representing the deactivation request and expected response.
      */
     @PUT("v1/traveller/account/deactivate/{nic}")
-    Call<DeactivateResponse> deactivate(@Path("nic") String nic);
+    Call<DeactivateResponse> deactivate(@Header("Authorization") String authorization, @Path("nic") String nic);
 }

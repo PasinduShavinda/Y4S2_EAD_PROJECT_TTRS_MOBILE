@@ -29,6 +29,7 @@ public class LogIn extends AppCompatActivity {
 
     TextView signUpLink;
 
+    TextView activeLink;
     Button loginBtn;
 
     ProgressDialog progressDialog;
@@ -45,8 +46,10 @@ public class LogIn extends AppCompatActivity {
         this.emailEditText = findViewById(R.id.loginEmailEditText);
         this.passwordEditText = findViewById(R.id.loginPasswordEditText);
         this.signUpLink = findViewById(R.id.signUpLink);
+        this.activeLink = findViewById(R.id.activereqLink);
         this.loginBtn = findViewById(R.id.logInBtn);
         this.signUpLink.setOnClickListener(view -> goToSignUp());
+        this.activeLink.setOnClickListener(view -> goToActive());
         this.loginBtn.setOnClickListener(view -> login());
     }
     /**
@@ -102,5 +105,12 @@ public class LogIn extends AppCompatActivity {
         Intent intent = new Intent(this, TravelerSignUp.class);
         startActivity(intent);
     }
+    /**
+     * Navigates to the activate screen.
+     */
 
+    private void goToActive() {
+        Intent intent = new Intent(this, RequestActivate.class);
+        startActivity(intent);
+    }
 }

@@ -11,7 +11,7 @@
         android:layout_width="359dp"
         android:layout_height="46dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="62dp"
+        android:layout_marginTop="2dp"
         android:layout_marginEnd="30dp"
         android:ems="10"
         android:hint="@string/email"
@@ -91,5 +91,33 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/signUpHintText"
         app:layout_constraintTop_toBottomOf="@+id/logInBtn" />
+    <!-- Activereq hint text -->
+    <TextView
+        android:id="@+id/activereqHintText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="180dp"
+        android:text="Is your account deactivated?"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/activereqLink"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signUpLink" />
 
+    <!-- Activereq link -->
+    <TextView
+        android:id="@+id/activereqLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="113dp"
+        android:layout_marginBottom="180dp"
+        android:text="Activate"
+        android:textColor="@color/design_default_color_primary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/activereqHintText"
+        app:layout_constraintTop_toBottomOf="@+id/signUpLink" />
 </androidx.constraintlayout.widget.ConstraintLayout>
