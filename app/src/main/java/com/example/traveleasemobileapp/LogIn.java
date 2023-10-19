@@ -81,7 +81,7 @@ public class LogIn extends AppCompatActivity {
         //logInManager.setLoggedInState(true);
         Toast.makeText(this, "SUCCESS", Toast.LENGTH_LONG).show();
         progressDialog.dismiss();
-        Intent intent = new Intent(this, MainHome.class);
+        Intent intent = new Intent(this, ReservationSearch.class);
         startActivity(intent);
         finish();
     }

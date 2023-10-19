@@ -23,21 +23,21 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true"
+            android:exported="false"
             android:label="@string/app_name"
-            android:theme="@style/Theme.TravelEaseMobileApp.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/Theme.TravelEaseMobileApp.NoActionBar" />
         <activity
             android:name=".TravelerSignUp"
             android:exported="false" />
         <activity
             android:name=".LogIn"
-            android:exported="false" />
+            android:exported="true">
+            <!-- This is the new launcher activity -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".MainHome"
             android:exported="false" />
@@ -48,5 +48,4 @@
             android:name=".RequestActivate"
             android:exported="false" />
     </application>
-
 </manifest>

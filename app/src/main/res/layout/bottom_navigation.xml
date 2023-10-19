@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="?android:attr/windowBackground"
+    android:elevation="8dp">
+
+    <ImageButton
+        android:id="@+id/bottom_nav_item1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:background="@color/white"
+        android:src="@drawable/baseline_home_24" />
+
+    <ImageButton
+        android:id="@+id/bottom_nav_item2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:background="@color/white"
+        android:src="@drawable/baseline_history_24" />
+
+    <ImageButton
+        android:id="@+id/bottom_nav_item3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:background="@color/white"
+        android:src="@drawable/baseline_manage_accounts_24" />
+</LinearLayout>

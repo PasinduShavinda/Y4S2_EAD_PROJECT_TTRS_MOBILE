@@ -25,7 +25,7 @@ import com.example.traveleasemobileapp.managers.ContextManager;
 import com.example.traveleasemobileapp.managers.DatabaseManager;
 import com.example.traveleasemobileapp.managers.DeactivateManager;
 import com.example.traveleasemobileapp.managers.LogInManager;
-
+import android.widget.ImageButton;
 public class DeactivateProfile extends AppCompatActivity {
 
     EditText nic;
@@ -34,6 +34,7 @@ public class DeactivateProfile extends AppCompatActivity {
     DatabaseManager databaseManager;
     LogInManager logInManager;
     ProgressDialog progressDialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +51,26 @@ public class DeactivateProfile extends AppCompatActivity {
         this.nic = (EditText) findViewById(R.id.nicEditText);
         this.confirmBtn = findViewById(R.id.confirmBtn);
         this.confirmBtn.setOnClickListener(view -> onClickConfirm());
+
+        ImageButton item1Button = findViewById(R.id.bottom_nav_item1);
+        ImageButton item2Button = findViewById(R.id.bottom_nav_item2);
+        ImageButton item3Button = findViewById(R.id.bottom_nav_item3);
+
+        item1Button.setOnClickListener(view -> {
+            Intent intent = new Intent(this, ReservationSearch.class);
+            startActivity(intent);
+        });
+
+        item2Button.setOnClickListener(view -> {
+            Intent intent = new Intent(this, ReservatinHistory.class);
+            startActivity(intent);
+        });
+
+        item3Button.setOnClickListener(view -> {
+            Intent intent = new Intent(this, DeactivateProfile.class);
+            startActivity(intent);
+        });
+
     }
     /**
      * Handles the user's confirmation to deactivate the profile.
